@@ -121,7 +121,7 @@ bot.on("message", async message => {
 					if (id) {
 						queue.push(id);
 						playMusic(id, message);
-						getYouTubeResultsId(args, 1).then(ytResults => {
+						getYouTubeResultsId(args, 0).then(ytResults => {
 							message.reply(`now playing **${ytResults[0]}**`);
 							songsQueue.push(ytResults[0]);
 						}).catch(error => console.log(error));
