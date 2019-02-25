@@ -223,7 +223,7 @@ bot.on("message", async message => {
 					let ytEmbed = new Discord.RichEmbed()
 						.setColor("#FF0000")
 						.setAuthor("Youtube search results: ", icon_url = "https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png")
-						.addField("1:", "```" + ytResults[0] + "```")
+						.addField("0:", "```" + ytResults[0] + "```")
 						.addBlankField()
 						.setFooter("Send !add [result number] to queue the song.");
 					message.channel.send(ytEmbed);
@@ -237,7 +237,7 @@ bot.on("message", async message => {
 				if (!re.test(args)) {
 					message.reply("you entered the wrong song number or character. Please only enter 1-5 for song number to be queued.");
 				} else {
-					let choice = ytResultAdd[args - 1];
+					let choice = ytResultAdd[args - 0];
 					getID(choice).then(id => {
 						if (id) {
 							queue.push(id);
